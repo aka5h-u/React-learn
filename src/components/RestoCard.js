@@ -1,8 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-import logo from './public/logo.jpeg';
-import usericon from './public/usericon.png'
+import { CDN_URL } from "../utils/constants";
 
 
 const resList = [
@@ -567,7 +563,7 @@ const RestoCard = ({resData}) =>{
     } = resData?.info;
     return(
         <div className="resto-card">
-            <img alt="res logo" className="resto-logo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + resData.info.cloudinaryImageId}/>
+            <img alt="res logo" className="resto-logo" src={CDN_URL + resData.info.cloudinaryImageId}/>
             <h3>{name}</h3> 
             <h4>{cuisines.join(',')}</h4>
             <h4>{avgRating}</h4>
@@ -577,54 +573,5 @@ const RestoCard = ({resData}) =>{
     );
 }
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">
-                Search
-            </div>
-            <div className="resto-container">
-            {
-                resList.map((resto) => (
-                    <RestoCard key={resto.info.id} resData={resto} />
-                ))
-            }
-            </div>
-        </div>
 
-    );
-};
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://www.designmantic.com/logo-images/167171.png?company=Company%20Name&keyword=food&slogan=&verify=1" />
-            </div>
-
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-
-        </div>
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header/>
-            <Body></Body>
-        </div>
-
-    );
-};
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout/>)
+export default RestoCard;
