@@ -82,3 +82,8 @@
 .filter{
     display: flex;
 }
+
+a {
+    text-decoration: none ; /* Use !important to override browser defaults */
+    color: inherit ; /* Or your desired color */
+  }
