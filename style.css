@@ -1,3 +1,5 @@
+
+/*
 .header{
     display: flex;
     justify-content: space-between;
@@ -82,8 +84,17 @@
 .filter{
     display: flex;
 }
+*/
 
+/*
 a {
-    text-decoration: none ; /* Use !important to override browser defaults */
-    color: inherit ; /* Or your desired color */
+    text-decoration: none ;
+    color: inherit ; 
   }
+
+  .user-card{
+    padding: 20px;
+    border: 1px solid black;
+  }
+
+  */
