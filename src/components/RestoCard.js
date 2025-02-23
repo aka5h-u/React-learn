@@ -24,4 +24,23 @@ const RestoCard = ({resData}) =>{
 }
 
 
+//higher order component
+
+export const vegCard = (RestoCard) =>{
+  return  (props)=>{
+    const {aggregatedDiscountInfoV3 } = props
+    //console.log("props" , aggregatedDiscountInfoV3)
+      return(
+        <div>
+   
+          <label className="absolute p-2  rounded-b-xs text-white bg-green-600">Veg</label>
+          <RestoCard {...props}/>
+      </div>
+
+      )
+     
+  }
+}
+
+
 export default RestoCard;
